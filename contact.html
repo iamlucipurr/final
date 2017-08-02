@@ -1,6 +1,12 @@
 <!doctype html>
 <html>
 <head>
+<!--       _
+       .__(.)< (MEOW)
+        \___)   
+ ~~~~~~~~~~~~~~~~~~ -->
+ <!--
+ this project was completed by Jake-->
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,13 +69,18 @@
   <div class="container-fluid">
   <!-- div below is to help keep content together -->
   <span id="beforeme" class="col-lg-7 col-sm-10 col-sm-offset-2 col-lg-offset-3">
+  
+  <!-- main header here to start dynamic date ojject gets displayed above it though cause times just as relative as the website -->
 	  <h1>Contact Us</h1>
 	  </span>
-	  
+	  <!-- main container to provide bootstrap control -->
 	  <div class="col-lg-7 col-lg-offset-3 col-sm-10 col-sm-offset-2 col-xs-offset-0 col-xs-12 col-md-offset-2 col-md-10">
+	  <!-- form starts here --> 
   <form name="formval">
   <fieldset id="formyeah"> 
+  <!-- cows got nothing on this LEGEND HA -->
 	  <legend> Cat Dealers Contact Form</legend>
+	  <!-- use of divs to provide grouping of form elements may possibly get used by bootstrap depending on how fluid container reacts-->
 		  <div id="ingamename" class="col-sm-12">
 			  <label>Your in game name <br/>
 				<input name="ign" id="ign" type="text" placeholder="  Type here"/>
@@ -128,7 +139,7 @@
   	<script type="text/javascript">
 		  //grabs input type and sets a handler
 		  $('input[type="checkbox"]').on('change', function() {
-			//once this handler goes off it changes all of the checkboxes not actually selected last be unchecked
+			//once this handler goes off it changes all of the checkboxes not actually selected last be unchecked its nifty
 			  $('input[type="checkbox"]').not(this).prop('checked', false);
 		  	});
 	  </script>
@@ -144,11 +155,8 @@
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="jqueryui/jquery-ui.min.js"></script>
-
-
-	
+<!-- javascript starts below all form controlls and other cool stuff -->
 	<script type="text/javascript">
-		
 		//the code below uses insert before/ append child/ and dates!! 
 		var appendFunct = function() {
       var month = new Array("January", "February", "March", "April", "May", "June", "July",    "August", "September", "October", "November", "December");
@@ -157,12 +165,13 @@
       var mm = today.getMonth();
       var currentMonth = month[mm];
       var yyyy = today.getFullYear();
-			
+			//date comes flying outta no where am i right ? 
 	  		
       today = "Today is " + currentMonth + ' ' + dd + ', ' + yyyy;
 			
 	 	var myNode = document.createElement("P");
 			//create the emelement 
+			//keeping the misspelling as a reminder as to why you shouldnt code at 2 am
 		
 		var dateNode = document.createTextNode(today);         // Create a text node
 		myNode.appendChild(dateNode);
@@ -177,8 +186,9 @@
 		
 		// the coding for form validation starts here!
 		var formValidate = function () {
+			//var to give a turn on and off option for the function
 		var isVal = true;
-	
+	//this is one crazy long conditional to quick test for validation if nothing stops it then it skips straight to the ending else if in hid sight i guess i could have used just the one conditional if i actually wanted to do things this way. 
 		if ((document.formval.ign.value == "") || (document.formval.runes.selectedIndex[0] == 0) || 
 			(document.formval.readreqs.checked == "false") || (document.formval.guildradio.checked == "false")
 			|| (document.formval.whatslevel.checked == "false")) {
@@ -215,6 +225,7 @@
 			return false;
 		}
 		} else {
+			//this amazing gem of code provides the page swap on complete form validation and it works ! so proud
 			location.replace("thanks.html");
 			alert("its valid");
 		}	
@@ -223,13 +234,11 @@
 }//end of formvalidate function 
 
 	
-		
+		//this provides styling to the date opject as well as applying some bootstrap so i can make it liquid!
 document.getElementsByClassName("nodeclassz").className += (' col-lg-7 col-sm-10 col-sm-offset-2 col-lg-offset-3');
 		
-		
+		//gotta have things loaded before i generate more content ! woo 
 		window.onload = appendFunct();
 	</script>
-	
-
 </body>
 </html>
