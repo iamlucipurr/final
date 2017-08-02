@@ -121,7 +121,7 @@
 	  </div>
 	     
 	     <div class="col-xs-3 col-xs-offset-4 col-sm-offset-0 col-sm-12">
-	  <button type="submit" id="booton" onClick="formValidate()">Submit</button>
+	  <input type="button" id="subbutton" value="Submit" onclick="formValidate()"/>
 	  </div>
 	  
 	  
@@ -215,12 +215,14 @@
 			return false;
 		}
 		} else {
-			window.location.replace("thanks.html");
+			location.replace("thanks.html");
+			alert("its valid");
 		}	
 	
 
 }//end of formvalidate function 
 
+	
 		
 document.getElementsByClassName("nodeclassz").className += (' col-lg-7 col-sm-10 col-sm-offset-2 col-lg-offset-3');
 		
