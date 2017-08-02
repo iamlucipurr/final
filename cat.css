@@ -9,6 +9,7 @@ body {
     background-position:30% 30%;
 	background-attachment: fixed;
 	text-align: center;
+	background-color: #D9D9E0;
 }
 
 
@@ -23,7 +24,7 @@ div {
 .nodeclassz {
 	
 	font-size: 2em;
-	background-color:#000000#383838
+	
 	
 	
 	
@@ -31,7 +32,6 @@ div {
 img {
 	max-width: 100%;
 	height: auto;
-	width: 628;
 	opacity: 0.85;
 }
 p {
@@ -99,7 +99,11 @@ button {
 	font-weight: 900;
 }
 
-
+#invalidclss {
+	color: white;
+	background-color: darkred;
+	
+}
 
 
 

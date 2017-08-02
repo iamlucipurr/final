@@ -67,12 +67,13 @@
 	  </span>
 	  
 	  <div class="col-lg-7 col-lg-offset-3 col-sm-10 col-sm-offset-2 col-xs-offset-0 col-xs-12 col-md-offset-2 col-md-10">
-  <form>
+  <form name="formval">
   <fieldset id="formyeah"> 
 	  <legend> Cat Dealers Contact Form</legend>
 		  <div id="ingamename" class="col-sm-12">
 			  <label>Your in game name <br/>
 				<input name="ign" id="ign" type="text" placeholder="  Type here"/>
+				<span id="gamename"></span>
 			  </label><br/>
 		  </div>
 		  
@@ -104,9 +105,8 @@
 			 <option value="rare" name="runes">Rare</option>
 			 <option value="epic" name="runes">Epic</option>
 			 <option value="Legendary" name="runes">Legendary</option>
-			 <option value="mixed" name="runes">Mixed</option>
-			 
-			 </select>
+			 <option value="mixed" name="runes">Mixed</option>	 
+		</select>
 	  </label>
 	  </div>
 	  
@@ -115,14 +115,13 @@
 	  Have you looked at our requirements on our about page? <br/>If so can you meet said requirements? <br/>
 	  <input type="radio" name="readreqs" value="yes" Id="readreqs_0" checked="checked"> Yes
 	  
-	  <input type="radio" name="readreqs" value="no"
-	  id="readreqs_1"> No
+	  <input type="radio" name="readreqs" value="no" id="readreqs_1"> No
      <br/>
 	     </label>
 	  </div>
 	     
 	     <div class="col-xs-3 col-xs-offset-4 col-sm-offset-0 col-sm-12">
-	  <button type="submit" onClick="clickFunc">Submit</button>
+	  <button type="submit" id="booton" onClick="formValidate">Submit</button>
 	  </div>
 	  
 	  
@@ -151,13 +150,15 @@
 	<script type="text/javascript">
 		
 		//the code below uses insert before/ append child/ and dates!! 
-		var appendFunct= function() {
+		var appendFunct = function() {
       var month = new Array("January", "February", "March", "April", "May", "June", "July",    "August", "September", "October", "November", "December");
       var today = new Date();
       var dd = today.getDate();
       var mm = today.getMonth();
       var currentMonth = month[mm];
       var yyyy = today.getFullYear();
+			
+	  		
       today = "Today is " + currentMonth + ' ' + dd + ', ' + yyyy;
 			
 	 	var myNode = document.createElement("P");
@@ -173,33 +174,55 @@
 		goHere.insertBefore(myNode, goHere.childNodes[1]);
 			
 		}
-		var clickFunc = function() {
-			window.location.replace("thanks.html");
+		
+		// the coding for form validation starts here!
+		var formValidate = function () {
+		var isVal = true;
+	
+		if ((document.formval.ign.value == "") || (document.formval.runes.selectedIndex[0] == 0) || 
+			(document.formval.readreqs.checked == "false") || (document.formval.guildradio.checked == "false")
+			|| (document.formval.whatslevel.checked == "false")) {
+			// text input validation
+		if ( document.formval.ign.value == ""){
+			alert("Please provide your in game name");
+			document.formval.ign.focus();
+			isVal = false;
+			return false;
+
 		}
+			// select option validation
+		if ( document.formval.runes.selectedIndex[0] == 0 )
+			{
+            	alert( "Please select what type of runes you have." );
+            	isVal = false;
+				return false;
+         	}
+			
+			// radio and checkmark button validation
+			
+		if ( document.formval.readreqs.checked == "false") 
+		{
+			alert( "Please select one requirement in the list.");
+			isVal = false;
+			return false;
+		} else if (document.formval.guildradio.checked == "false") {
+			alert( "Please select a guild radio button.");
+			isVal = false;
+			return false;
+		} else if (document.formval.whatslevel.checked == "false") {
+			alert( "Please select your closest level.");
+			isVal = false;
+			return false;
+		}
+		} else {
+			window.location.replace("thanks.html");
+		}	
+	
+
+}//end of formvalidate function 
+
 		
 document.getElementsByClassName("nodeclassz").className += (' col-lg-7 col-sm-10 col-sm-offset-2 col-lg-offset-3');
-		
-		
-		
-var validatefunc = function(ign, whatslevel, guildradio, runes, readreqs){
-	var isVal = false
-		//getting all the data for validation	
-	var ign = document.getElementsByName("ign");
-	//whatislevel is variable name
-	//whatslevel is input name
-	var whatislevel = document.getElementsByName("whatslevel");
-	var checkbox = [];
-	
-	var beenG = document.getElementsByName("guildradio");
-	var runes = document.getElementsByName("runes");
-	var readrequirements document.getElementsByName("readreqs");
-
-	
-	
-		};
-		
-		
-		
 		
 		
 		window.onload = appendFunct();
