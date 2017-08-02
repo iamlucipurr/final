@@ -1,0 +1,112 @@
+div p strong a {
+	color: azure;
+}
+body {
+	padding:50px 0px 0px 0px;
+	margin: 0px;
+	background-image: url(bckgrnd.png);
+	background-repeat: no-repeat;
+    background-position:30% 30%;
+	background-attachment: fixed;
+	text-align: center;
+}
+
+
+div {
+	padding: 0px;
+	margin:0px;
+	word-wrap: normal;
+	
+	
+	
+	}
+.nodeclassz {
+	
+	font-size: 2em;
+	background-color:#000000#383838
+	
+	
+	
+}
+img {
+	max-width: 100%;
+	height: auto;
+	width: 628;
+	opacity: 0.85;
+}
+p {
+	
+	
+}
+h1 {
+	
+	
+	
+}
+
+h2{
+	
+	
+}
+h3{
+	
+	
+}
+h4 {
+	
+}
+.colorsforbk{
+	background-color:#9191A0;
+	
+
+}
+
+.boxminhi {
+	min-height: 500px;
+}
+
+.aboutpho {
+	width:100%;
+	height:auto;
+}
+/* form css */
+
+form {
+	
+	
+	padding: 1em 1em 1em 1em;
+}
+label {
+	margin-bottom: 1em;
+	
+}
+button {
+	margin-top:2em;
+}
+
+
+#ign {
+	width: 100%;
+}
+
+
+.ui-widget-content {
+	opacity: 0.8;
+}
+
+#makegreatagain {
+	opacity: 0.9;
+	font-weight: 900;
+}
+
+
+
+
+
+
+
+
+
+
+.hidden-md {
+}
